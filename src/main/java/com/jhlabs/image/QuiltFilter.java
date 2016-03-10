@@ -16,11 +16,9 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.util.*;
-import java.awt.*;
-import java.awt.image.*;
-
-import com.jhlabs.math.*;
+import java.awt.Rectangle;
+import java.util.Date;
+import java.util.Random;
 
 public class QuiltFilter extends WholeImageFilter {
 

@@ -16,9 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-
 /**
  * A filter to change the saturation of an image. This works by calculating a grayscale version of the image
  * and then extrapolating away from it.

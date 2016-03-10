@@ -16,11 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
-
-import com.jhlabs.composite.*;
+import java.awt.image.BufferedImage;
 
 /**
  * A filter which renders "glints" on bright parts of the image.

@@ -16,8 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Rectangle;
 
 /**
  * A filter which removes noise from an image using a "pepper and salt" algorithm.

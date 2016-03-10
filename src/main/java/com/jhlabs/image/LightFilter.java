@@ -16,14 +16,17 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.image.*;
+import com.jhlabs.math.Function2D;
+import com.jhlabs.math.ImageFunction2D;
+import com.jhlabs.vecmath.Color4f;
+import com.jhlabs.vecmath.Vector3f;
 
-import com.jhlabs.math.*;
-import com.jhlabs.vecmath.*;
-
-import java.awt.*;
-import java.io.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.awt.image.Kernel;
+import java.util.Vector;
 
 /**
  * A filter which produces lighting and embossing effects.

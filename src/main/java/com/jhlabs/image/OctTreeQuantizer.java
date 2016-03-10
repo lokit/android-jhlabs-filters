@@ -16,10 +16,8 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.util.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.image.*;
+import java.io.PrintStream;
+import java.util.Vector;
 
 /**
  * An image Quantizer based on the Octree algorithm. This is a very basic implementation

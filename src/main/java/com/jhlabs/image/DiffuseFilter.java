@@ -16,10 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-
-import com.jhlabs.math.*;
+import java.awt.image.BufferedImage;
 
 /**
  * This filter diffuses an image by moving its pixels in random directions.

@@ -16,9 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.util.*;
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Rectangle;
 
 /**
  * A filter which quantizes an image to a set number of colors - useful for producing

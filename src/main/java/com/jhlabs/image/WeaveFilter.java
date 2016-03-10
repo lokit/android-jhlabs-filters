@@ -16,9 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-
 public class WeaveFilter extends PointFilter {
 
   private float xWidth = 16;

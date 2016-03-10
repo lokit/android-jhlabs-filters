@@ -16,10 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-import java.io.*;
-
 public class FadeFilter extends PointFilter {
 
   private int width, height;

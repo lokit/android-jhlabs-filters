@@ -16,8 +16,11 @@ limitations under the License.
 
 package com.jhlabs.composite;
 
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Composite;
+import java.awt.CompositeContext;
+import java.awt.image.ColorModel;
+import java.awt.image.Raster;
+import java.awt.image.WritableRaster;
 
 public abstract class RGBComposite implements Composite {
 

@@ -16,11 +16,11 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-import java.util.*;
+import com.jhlabs.math.Function2D;
+import com.jhlabs.math.Noise;
 
-import com.jhlabs.math.*;
+import java.awt.Rectangle;
+import java.util.Random;
 
 /**
  * A filter which produces an image with a cellular texture.

@@ -16,8 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.image.*;
-
 /**
  * A filter which inverts the RGB channels of an image.
  */

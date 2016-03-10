@@ -16,12 +16,9 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
-import java.awt.color.*;
+import com.jhlabs.math.FFT;
 
-import com.jhlabs.math.*;
+import java.awt.image.BufferedImage;
 
 /**
  * A filter which use FFTs to simulate lens blur on an image.

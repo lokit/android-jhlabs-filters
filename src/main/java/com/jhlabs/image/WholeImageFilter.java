@@ -16,8 +16,10 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
+import java.awt.image.WritableRaster;
 
 /**
  * A filter which acts as a superclass for filters which need to have the whole image in memory

@@ -16,9 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-
 public class CurvesFilter extends TransferFilter {
 
   private Curve[] curves = new Curve[1];

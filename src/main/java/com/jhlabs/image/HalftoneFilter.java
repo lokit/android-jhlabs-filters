@@ -16,8 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.image.*;
-import java.util.*;
+import java.awt.image.BufferedImage;
 
 /**
  * A filter which uses a another image as a ask to produce a halftoning effect.

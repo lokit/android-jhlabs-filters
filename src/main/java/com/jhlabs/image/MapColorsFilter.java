@@ -16,8 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.image.*;
-
 /**
  * A filter which replaces one color by another in an image. This is frankly, not often useful, but has its occasional
  * uses when dealing with GIF transparency and the like.

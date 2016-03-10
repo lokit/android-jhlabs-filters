@@ -16,11 +16,11 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
+import com.jhlabs.composite.MiscComposite;
 
-import com.jhlabs.composite.*;
+import java.awt.AlphaComposite;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 /**
  * A filter which produces the effect of light rays shining out of an image.

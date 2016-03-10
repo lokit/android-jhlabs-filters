@@ -16,8 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Rectangle;
 
 /**
  * A filter which replcaes each pixel by the maximum of itself and its eight neightbours.

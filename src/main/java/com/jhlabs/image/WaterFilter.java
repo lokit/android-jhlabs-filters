@@ -16,11 +16,8 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
-
-import com.jhlabs.math.*;
+import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
 
 /**
  * A filter which produces a water ripple distortion.

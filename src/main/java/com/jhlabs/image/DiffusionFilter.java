@@ -16,8 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Rectangle;
 
 /**
  * A filter which uses Floyd-Steinberg error diffusion dithering to halftone an image.

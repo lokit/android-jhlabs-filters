@@ -16,11 +16,6 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.util.*;
-
-import com.jhlabs.math.*;
-
 public class PointillizeFilter extends CellularFilter {
 
   private float edgeThickness = 0.4f;

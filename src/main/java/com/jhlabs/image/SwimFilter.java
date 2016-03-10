@@ -16,10 +16,7 @@ limitations under the License.
 
 package com.jhlabs.image;
 
-import java.awt.*;
-import java.awt.image.*;
-
-import com.jhlabs.math.*;
+import com.jhlabs.math.Noise;
 
 /**
  * A filter which distorts an image as if it were underwater.
