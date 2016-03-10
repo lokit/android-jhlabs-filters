@@ -22,135 +22,135 @@ import java.awt.image.*;
 import java.util.*;
 
 public class ShatterFilter extends AbstractBufferedImageOp {
-    private float centreX = 0.5f, centreY = 0.5f;
-    private float distance;
-    private float transition;
-    private float rotation;
-    private float zoom;
-    private float startAlpha = 1;
-    private float endAlpha = 1;
-    private int iterations = 5;
-    private int tile;
+  private float centreX = 0.5f, centreY = 0.5f;
+  private float distance;
+  private float transition;
+  private float rotation;
+  private float zoom;
+  private float startAlpha = 1;
+  private float endAlpha = 1;
+  private int iterations = 5;
+  private int tile;
 
-    public ShatterFilter() {
-	}
-	
-	public void setTransition( float transition ) {
-		this.transition = transition;
-	}
+  public ShatterFilter() {
+  }
 
-	public float getTransition() {
-		return transition;
-	}
-	
-	public void setDistance( float distance ) {
-		this.distance = distance;
-	}
+  public void setTransition(float transition) {
+    this.transition = transition;
+  }
 
-	public float getDistance() {
-		return distance;
-	}
-	
-	public void setRotation( float rotation ) {
-		this.rotation = rotation;
-	}
+  public float getTransition() {
+    return transition;
+  }
 
-	public float getRotation() {
-		return rotation;
-	}
-	
-	public void setZoom( float zoom ) {
-		this.zoom = zoom;
-	}
+  public void setDistance(float distance) {
+    this.distance = distance;
+  }
 
-	public float getZoom() {
-		return zoom;
-	}
-	
-	public void setStartAlpha( float startAlpha ) {
-		this.startAlpha = startAlpha;
-	}
+  public float getDistance() {
+    return distance;
+  }
 
-	public float getStartAlpha() {
-		return startAlpha;
-	}
-	
-	public void setEndAlpha( float endAlpha ) {
-		this.endAlpha = endAlpha;
-	}
+  public void setRotation(float rotation) {
+    this.rotation = rotation;
+  }
 
-	public float getEndAlpha() {
-		return endAlpha;
-	}
-	
-	public void setCentreX( float centreX ) {
-		this.centreX = centreX;
-	}
+  public float getRotation() {
+    return rotation;
+  }
 
-	public float getCentreX() {
-		return centreX;
-	}
-	
-	public void setCentreY( float centreY ) {
-		this.centreY = centreY;
-	}
+  public void setZoom(float zoom) {
+    this.zoom = zoom;
+  }
 
-	public float getCentreY() {
-		return centreY;
-	}
-	
-	public void setCentre( Point2D centre ) {
-		this.centreX = (float)centre.getX();
-		this.centreY = (float)centre.getY();
-	}
+  public float getZoom() {
+    return zoom;
+  }
 
-	public Point2D getCentre() {
-		return new Point2D.Float( centreX, centreY );
-	}
-	
-	public void setIterations( int iterations ) {
-		this.iterations = iterations;
-	}
+  public void setStartAlpha(float startAlpha) {
+    this.startAlpha = startAlpha;
+  }
 
-	public int getIterations() {
-		return iterations;
-	}
-	
-	public void setTile( int tile ) {
-		this.tile = tile;
-	}
+  public float getStartAlpha() {
+    return startAlpha;
+  }
 
-	public int getTile() {
-		return tile;
-	}
-	
-	static class Tile {
-		float x, y, vx, vy, w, h;
-		float rotation;
-		Shape shape;
-	}
-	
-    public BufferedImage filter( BufferedImage src, BufferedImage dst ) {
-        if ( dst == null )
-            dst = createCompatibleDestImage( src, null );
-        float width = (float)src.getWidth();
-        float height = (float)src.getHeight();
-        float cx = (float)src.getWidth() * centreX;
-        float cy = (float)src.getHeight() * centreY;
-        float imageRadius = (float)Math.sqrt( cx*cx + cy*cy );
+  public void setEndAlpha(float endAlpha) {
+    this.endAlpha = endAlpha;
+  }
+
+  public float getEndAlpha() {
+    return endAlpha;
+  }
+
+  public void setCentreX(float centreX) {
+    this.centreX = centreX;
+  }
+
+  public float getCentreX() {
+    return centreX;
+  }
+
+  public void setCentreY(float centreY) {
+    this.centreY = centreY;
+  }
+
+  public float getCentreY() {
+    return centreY;
+  }
+
+  public void setCentre(Point2D centre) {
+    this.centreX = (float) centre.getX();
+    this.centreY = (float) centre.getY();
+  }
+
+  public Point2D getCentre() {
+    return new Point2D.Float(centreX, centreY);
+  }
+
+  public void setIterations(int iterations) {
+    this.iterations = iterations;
+  }
+
+  public int getIterations() {
+    return iterations;
+  }
+
+  public void setTile(int tile) {
+    this.tile = tile;
+  }
+
+  public int getTile() {
+    return tile;
+  }
+
+  static class Tile {
+    float x, y, vx, vy, w, h;
+    float rotation;
+    Shape shape;
+  }
+
+  public BufferedImage filter(BufferedImage src, BufferedImage dst) {
+    if (dst == null)
+      dst = createCompatibleDestImage(src, null);
+    float width = (float) src.getWidth();
+    float height = (float) src.getHeight();
+    float cx = (float) src.getWidth() * centreX;
+    float cy = (float) src.getHeight() * centreY;
+    float imageRadius = (float) Math.sqrt(cx * cx + cy * cy);
 
 //        BufferedImage[] tiles = new BufferedImage[iterations];
-		int numTiles = iterations*iterations;
-        Tile[] shapes = new Tile[numTiles];
-        float[] rx = new float[numTiles];
-        float[] ry = new float[numTiles];
-        float[] rz = new float[numTiles];
+    int numTiles = iterations * iterations;
+    Tile[] shapes = new Tile[numTiles];
+    float[] rx = new float[numTiles];
+    float[] ry = new float[numTiles];
+    float[] rz = new float[numTiles];
 
-		Graphics2D g = dst.createGraphics();
+    Graphics2D g = dst.createGraphics();
 //		g.drawImage( src, null, null );
 
-        Random random = new Random( 0 );
-		float lastx = 0, lasty = 0;
+    Random random = new Random(0);
+    float lastx = 0, lasty = 0;
 /*
         for ( int i = 0; i <= numTiles; i++ ) {
             double angle = (double)i * 2*Math.PI / numTiles;
@@ -175,59 +175,59 @@ public class ShatterFilter extends AbstractBufferedImageOp {
             lasty = y;
         }
 */
-        for ( int y = 0; y < iterations; y++ ) {
-			int y1 = (int)height*y/iterations;
-			int y2 = (int)height*(y+1)/iterations;
-			for ( int x = 0; x < iterations; x++ ) {
-				int i = y*iterations+x;
-				int x1 = (int)width*x/iterations;
-				int x2 = (int)width*(x+1)/iterations;
-				rx[i] = tile*random.nextFloat();
-				ry[i] = tile*random.nextFloat();
-			rx[i] = 0;
-			ry[i] = 0;
-				rz[i] = tile*(2*random.nextFloat()-1);
-                Shape p = new Rectangle( x1, y1, x2-x1, y2-y1 );
-				shapes[i] = new Tile();
-				shapes[i].shape = p;
-				shapes[i].x = (x1+x2)*0.5f;
-				shapes[i].y = (y1+y2)*0.5f;
-				shapes[i].vx = width-(cx-x);
-				shapes[i].vy = height-(cy-y);
-				shapes[i].w = x2-x1;
-				shapes[i].h = y2-y1;
-            }
-        }
+    for (int y = 0; y < iterations; y++) {
+      int y1 = (int) height * y / iterations;
+      int y2 = (int) height * (y + 1) / iterations;
+      for (int x = 0; x < iterations; x++) {
+        int i = y * iterations + x;
+        int x1 = (int) width * x / iterations;
+        int x2 = (int) width * (x + 1) / iterations;
+        rx[i] = tile * random.nextFloat();
+        ry[i] = tile * random.nextFloat();
+        rx[i] = 0;
+        ry[i] = 0;
+        rz[i] = tile * (2 * random.nextFloat() - 1);
+        Shape p = new Rectangle(x1, y1, x2 - x1, y2 - y1);
+        shapes[i] = new Tile();
+        shapes[i].shape = p;
+        shapes[i].x = (x1 + x2) * 0.5f;
+        shapes[i].y = (y1 + y2) * 0.5f;
+        shapes[i].vx = width - (cx - x);
+        shapes[i].vy = height - (cy - y);
+        shapes[i].w = x2 - x1;
+        shapes[i].h = y2 - y1;
+      }
+    }
 
-		for ( int i = 0; i < numTiles; i++ ) {
-			float h = (float)i / numTiles;
-			double angle = h * 2*Math.PI;
-			float x = transition * width*(float)Math.cos(angle);
-			float y = transition * height*(float)Math.sin(angle);
+    for (int i = 0; i < numTiles; i++) {
+      float h = (float) i / numTiles;
+      double angle = h * 2 * Math.PI;
+      float x = transition * width * (float) Math.cos(angle);
+      float y = transition * height * (float) Math.sin(angle);
 
-			Tile tile = shapes[i];
-			Rectangle r = tile.shape.getBounds();
-			AffineTransform t = g.getTransform();
-x = tile.x + transition * tile.vx;
-y = tile.y + transition * tile.vy;
-			g.translate( x, y );
+      Tile tile = shapes[i];
+      Rectangle r = tile.shape.getBounds();
+      AffineTransform t = g.getTransform();
+      x = tile.x + transition * tile.vx;
+      y = tile.y + transition * tile.vy;
+      g.translate(x, y);
 //			g.translate( tile.w*0.5f, tile.h*0.5f );
-			g.rotate( transition * rz[i] );
+      g.rotate(transition * rz[i]);
 //			g.scale( (float)Math.cos( transition * rx[i] ), (float)Math.cos( transition * ry[i] ) );
 //			g.translate( -tile.w*0.5f, -tile.h*0.5f );
-			g.setColor( Color.getHSBColor( h, 1, 1 ) );
-			Shape clip = g.getClip();
-			g.clip( tile.shape );
-			g.drawImage( src, 0, 0, null );
-			g.setClip( clip );
-			g.setTransform( t );
-		}
-
-		g.dispose();
-        return dst;
+      g.setColor(Color.getHSBColor(h, 1, 1));
+      Shape clip = g.getClip();
+      g.clip(tile.shape);
+      g.drawImage(src, 0, 0, null);
+      g.setClip(clip);
+      g.setTransform(t);
     }
-    
-	public String toString() {
-		return "Transition/Shatter...";
-	}
+
+    g.dispose();
+    return dst;
+  }
+
+  public String toString() {
+    return "Transition/Shatter...";
+  }
 }

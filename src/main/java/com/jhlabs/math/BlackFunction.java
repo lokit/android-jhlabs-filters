@@ -17,8 +17,7 @@ limitations under the License.
 package com.jhlabs.math;
 
 public class BlackFunction implements BinaryFunction {
-	public boolean isBlack(int rgb) {
-		return rgb == 0xff000000;
-	}
+  public boolean isBlack(int rgb) {
+    return rgb == 0xff000000;
+  }
 }
-

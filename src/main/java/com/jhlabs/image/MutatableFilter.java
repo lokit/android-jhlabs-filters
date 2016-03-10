@@ -19,5 +19,5 @@ package com.jhlabs.image;
 import java.awt.image.*;
 
 public interface MutatableFilter {
-	public void mutate(float mutationLevel, BufferedImageOp dst, boolean keepShape, boolean keepColors);
+  void mutate(float mutationLevel, BufferedImageOp dst, boolean keepShape, boolean keepColors);
 }

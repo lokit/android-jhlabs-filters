@@ -25,31 +25,30 @@ import java.io.*;
  */
 public class MaskFilter extends PointFilter {
 
-	private int mask;
+  private int mask;
 
-	public MaskFilter() {
-		this(0xff00ffff);
-	}
+  public MaskFilter() {
+    this(0xff00ffff);
+  }
 
-	public MaskFilter(int mask) {
-		canFilterIndexColorModel = true;
-		setMask(mask);
-	}
+  public MaskFilter(int mask) {
+    canFilterIndexColorModel = true;
+    setMask(mask);
+  }
 
-	public void setMask(int mask) {
-		this.mask = mask;
-	}
+  public void setMask(int mask) {
+    this.mask = mask;
+  }
 
-	public int getMask() {
-		return mask;
-	}
+  public int getMask() {
+    return mask;
+  }
 
-	public int filterRGB(int x, int y, int rgb) {
-		return rgb & mask;
-	}
+  public int filterRGB(int x, int y, int rgb) {
+    return rgb & mask;
+  }
 
-	public String toString() {
-		return "Mask";
-	}
-
+  public String toString() {
+    return "Mask";
+  }
 }

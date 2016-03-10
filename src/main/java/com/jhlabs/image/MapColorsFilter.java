@@ -24,31 +24,31 @@ import java.awt.image.*;
  */
 public class MapColorsFilter extends PointFilter {
 
-	private int oldColor;
-	private int newColor;
-	
-	/**
-     * Construct a MapColorsFilter.
-     */
-    public MapColorsFilter() {
-		this( 0xffffffff, 0xff000000 );
-	}
-	
-	/**
-     * Construct a MapColorsFilter.
-     * @param oldColor the color to replace
-     * @param newColor the color to replace it with
-     */
-	public MapColorsFilter(int oldColor, int newColor) {
-		canFilterIndexColorModel = true;
-		this.oldColor = oldColor;
-		this.newColor = newColor;
-	}
+  private int oldColor;
+  private int newColor;
 
-	public int filterRGB(int x, int y, int rgb) {
-		if (rgb == oldColor)
-			return newColor;
-		return rgb;
-	}
+  /**
+   * Construct a MapColorsFilter.
+   */
+  public MapColorsFilter() {
+    this(0xffffffff, 0xff000000);
+  }
+
+  /**
+   * Construct a MapColorsFilter.
+   *
+   * @param oldColor the color to replace
+   * @param newColor the color to replace it with
+   */
+  public MapColorsFilter(int oldColor, int newColor) {
+    canFilterIndexColorModel = true;
+    this.oldColor = oldColor;
+    this.newColor = newColor;
+  }
+
+  public int filterRGB(int x, int y, int rgb) {
+    if (rgb == oldColor)
+      return newColor;
+    return rgb;
+  }
 }
-
