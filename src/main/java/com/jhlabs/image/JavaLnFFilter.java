@@ -24,6 +24,7 @@ public class JavaLnFFilter extends PointFilter {
   public JavaLnFFilter() {
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     if ((x & 1) == (y & 1))
       return rgb;

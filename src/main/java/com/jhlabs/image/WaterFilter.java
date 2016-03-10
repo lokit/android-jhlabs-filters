@@ -185,6 +185,7 @@ public class WaterFilter extends TransformFilter {
     return a <= v && v <= b;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     icentreX = src.getWidth() * centreX;
     icentreY = src.getHeight() * centreY;
@@ -194,6 +195,7 @@ public class WaterFilter extends TransformFilter {
     return super.filter(src, dst);
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     float dx = x - icentreX;
     float dy = y - icentreY;

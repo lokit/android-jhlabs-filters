@@ -47,6 +47,7 @@ public class ScaleFilter extends AbstractBufferedImageOp {
     this.height = height;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     if (dst == null) {
       ColorModel dstCM = src.getColorModel();

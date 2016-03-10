@@ -186,12 +186,14 @@ public class KaleidoscopeFilter extends TransformFilter {
     return radius;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     icentreX = src.getWidth() * centreX;
     icentreY = src.getHeight() * centreY;
     return super.filter(src, dst);
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     double dx = x - icentreX;
     double dy = y - icentreY;

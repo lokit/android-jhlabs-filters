@@ -21,6 +21,7 @@ package com.jhlabs.image;
  */
 public class SolarizeFilter extends TransferFilter {
 
+  @Override
   protected float transferFunction(float v) {
     return v > 0.5f ? 2 * (v - 0.5f) : 2 * (0.5f - v);
   }

@@ -85,6 +85,7 @@ public class GammaFilter extends TransferFilter {
     return rGamma;
   }
 
+  @Override
   protected void initialize() {
     rTable = makeTable(rGamma);
 

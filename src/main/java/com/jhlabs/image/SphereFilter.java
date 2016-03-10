@@ -137,6 +137,7 @@ public class SphereFilter extends TransformFilter {
     return new Point2D.Float(centreX, centreY);
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int width = src.getWidth();
     int height = src.getHeight();
@@ -151,6 +152,7 @@ public class SphereFilter extends TransformFilter {
     return super.filter(src, dst);
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     float dx = x - icentreX;
     float dy = y - icentreY;

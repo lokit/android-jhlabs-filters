@@ -161,6 +161,7 @@ public class RippleFilter extends TransformFilter {
     return waveType;
   }
 
+  @Override
   protected void transformSpace(Rectangle r) {
     if (edgeAction == ZERO) {
       r.x -= (int) xAmplitude;
@@ -170,6 +171,7 @@ public class RippleFilter extends TransformFilter {
     }
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     float nx = (float) y / xWavelength;
     float ny = (float) x / yWavelength;

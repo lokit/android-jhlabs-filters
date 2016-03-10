@@ -49,6 +49,7 @@ public class BicubicScaleFilter extends AbstractBufferedImageOp {
     this.height = height;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int w = src.getWidth();
     int h = src.getHeight();

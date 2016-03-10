@@ -135,6 +135,7 @@ public class KeyFilter extends AbstractBufferedImageOp {
     return cleanImage;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int width = src.getWidth();
     int height = src.getHeight();

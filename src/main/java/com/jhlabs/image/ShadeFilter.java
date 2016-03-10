@@ -119,6 +119,7 @@ public class ShadeFilter extends WholeImageFilter {
     c.set(((argb >> 16) & 0xff) * r255, ((argb >> 8) & 0xff) * r255, (argb & 0xff) * r255, ((argb >> 24) & 0xff) * r255);
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int index = 0;
     int[] outPixels = new int[width * height];

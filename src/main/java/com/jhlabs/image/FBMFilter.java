@@ -268,11 +268,13 @@ public class FBMFilter extends PointFilter implements Cloneable {
     return fbm;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     fBm = makeFBM(H, lacunarity, octaves);
     return super.filter(src, dst);
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     float nx = m00 * x + m01 * y;
     float ny = m10 * x + m11 * y;

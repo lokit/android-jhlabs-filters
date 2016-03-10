@@ -91,6 +91,7 @@ public class ScratchFilter extends AbstractBufferedImageOp {
     return seed;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     if (dst == null)
       dst = createCompatibleDestImage(src, null);

@@ -212,6 +212,7 @@ public class PlasmaFilter extends WholeImageFilter {
     return doPixel(mx, my, x2, y2, pixels, stride, depth - 1, scale + 1);
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int[] outPixels = new int[width * height];
 

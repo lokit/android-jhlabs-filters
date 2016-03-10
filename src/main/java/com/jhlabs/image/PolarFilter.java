@@ -60,6 +60,7 @@ public class PolarFilter extends TransformFilter {
     setEdgeAction(CLAMP);
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     this.width = src.getWidth();
     this.height = src.getHeight();
@@ -93,6 +94,7 @@ public class PolarFilter extends TransformFilter {
     return x * x;
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     float theta, t;
     float m, xmax, ymax;

@@ -118,6 +118,7 @@ public class FlareFilter extends PointFilter {
     return radius;
   }
 
+  @Override
   public void setDimensions(int width, int height) {
     this.width = width;
     this.height = height;
@@ -126,6 +127,7 @@ public class FlareFilter extends PointFilter {
     super.setDimensions(width, height);
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     float dx = x - icentreX;
     float dy = y - icentreY;

@@ -66,6 +66,7 @@ public abstract class RGBComposite implements Composite {
       this.dstColorModel = dstColorModel;
     }
 
+    @Override
     public void dispose() {
     }
 
@@ -81,6 +82,7 @@ public abstract class RGBComposite implements Composite {
 
     public abstract void composeRGB(int[] src, int[] dst, float alpha);
 
+    @Override
     public void compose(Raster src, Raster dstIn, WritableRaster dstOut) {
       float alpha = this.alpha;
 

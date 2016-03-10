@@ -28,6 +28,7 @@ public class SmartBlurFilter extends AbstractBufferedImageOp {
   private int vRadius = 5;
   private int threshold = 10;
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int width = src.getWidth();
     int height = src.getHeight();

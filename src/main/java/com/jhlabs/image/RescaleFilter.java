@@ -30,6 +30,7 @@ public class RescaleFilter extends TransferFilter {
     this.scale = scale;
   }
 
+  @Override
   protected float transferFunction(float v) {
     return v * scale;
   }

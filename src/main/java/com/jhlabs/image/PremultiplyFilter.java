@@ -25,6 +25,7 @@ public class PremultiplyFilter extends PointFilter {
   public PremultiplyFilter() {
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     int a = (rgb >> 24) & 0xff;
     int r = (rgb >> 16) & 0xff;

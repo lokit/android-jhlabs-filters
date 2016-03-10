@@ -77,6 +77,7 @@ public class ContourFilter extends WholeImageFilter {
     return contourColor;
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int index = 0;
     short[][] r = new short[3][width];

@@ -60,6 +60,7 @@ public class BrushedMetalFilter implements BufferedImageOp {
     this.shine = shine;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int width = src.getWidth();
     int height = src.getHeight();
@@ -272,16 +273,19 @@ public class BrushedMetalFilter implements BufferedImageOp {
     return monochrome;
   }
 
+  @Override
   public BufferedImage createCompatibleDestImage(BufferedImage src, ColorModel dstCM) {
     if (dstCM == null)
       dstCM = src.getColorModel();
     return new BufferedImage(dstCM, dstCM.createCompatibleWritableRaster(src.getWidth(), src.getHeight()), dstCM.isAlphaPremultiplied(), null);
   }
 
+  @Override
   public Rectangle2D getBounds2D(BufferedImage src) {
     return new Rectangle(0, 0, src.getWidth(), src.getHeight());
   }
 
+  @Override
   public Point2D getPoint2D(Point2D srcPt, Point2D dstPt) {
     if (dstPt == null)
       dstPt = new Point2D.Double();
@@ -289,6 +293,7 @@ public class BrushedMetalFilter implements BufferedImageOp {
     return dstPt;
   }
 
+  @Override
   public RenderingHints getRenderingHints() {
     return null;
   }

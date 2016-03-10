@@ -254,6 +254,7 @@ public class DitherFilter extends PointFilter {
     }
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     if (!initialized) {
       initialized = true;

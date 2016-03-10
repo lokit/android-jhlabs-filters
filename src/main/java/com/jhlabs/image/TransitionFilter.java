@@ -154,6 +154,7 @@ public class TransitionFilter extends AbstractBufferedImageOp {
     }
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     if (dst == null)
       dst = createCompatibleDestImage(src, null);

@@ -29,6 +29,7 @@ public class TritoneFilter extends PointFilter {
   private int highColor = 0xffffffff;
   private int[] lut;
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     lut = new int[256];
     for (int i = 0; i < 128; i++) {
@@ -44,6 +45,7 @@ public class TritoneFilter extends PointFilter {
     return dst;
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     return lut[PixelUtils.brightness(rgb)];
   }

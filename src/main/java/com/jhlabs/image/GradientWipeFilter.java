@@ -81,6 +81,7 @@ public class GradientWipeFilter extends AbstractBufferedImageOp {
     return invert;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int width = src.getWidth();
     int height = src.getHeight();

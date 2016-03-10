@@ -58,6 +58,7 @@ public class SaturationFilter extends PointFilter {
     return amount;
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     if (amount != 1) {
       int a = rgb & 0xff000000;

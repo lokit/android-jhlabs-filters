@@ -107,6 +107,7 @@ public class ShapeFilter extends WholeImageFilter {
     return merge;
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int[] map = new int[width * height];
     makeMap(inPixels, map, width, height);

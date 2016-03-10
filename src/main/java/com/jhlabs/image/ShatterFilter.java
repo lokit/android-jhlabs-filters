@@ -134,6 +134,7 @@ public class ShatterFilter extends AbstractBufferedImageOp {
     Shape shape;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     if (dst == null)
       dst = createCompatibleDestImage(src, null);

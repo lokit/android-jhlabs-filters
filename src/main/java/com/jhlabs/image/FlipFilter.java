@@ -95,6 +95,7 @@ public class FlipFilter extends AbstractBufferedImageOp {
     return operation;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int width = src.getWidth();
     int height = src.getHeight();

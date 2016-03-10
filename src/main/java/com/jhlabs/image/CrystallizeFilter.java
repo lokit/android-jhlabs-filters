@@ -54,6 +54,7 @@ public class CrystallizeFilter extends CellularFilter {
     return edgeColor;
   }
 
+  @Override
   public int getPixel(int x, int y, int[] inPixels, int width, int height) {
     float nx = m00 * x + m01 * y;
     float ny = m10 * x + m11 * y;

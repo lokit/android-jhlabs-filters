@@ -26,6 +26,7 @@ public class Flush3DFilter extends WholeImageFilter {
   public Flush3DFilter() {
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int index = 0;
     int[] outPixels = new int[width * height];

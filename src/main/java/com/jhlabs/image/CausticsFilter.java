@@ -211,6 +211,7 @@ public class CausticsFilter extends WholeImageFilter {
     return bgColor;
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     Random random = new Random(0);
 

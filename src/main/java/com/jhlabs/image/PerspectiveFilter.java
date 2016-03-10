@@ -176,6 +176,7 @@ public class PerspectiveFilter extends TransformFilter {
     a33 = 1.0f;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     A = a22 * a33 - a32 * a23;
     B = a31 * a23 - a21 * a33;
@@ -203,6 +204,7 @@ public class PerspectiveFilter extends TransformFilter {
     return super.filter(src, dst);
   }
 
+  @Override
   protected void transformSpace(Rectangle rect) {
     if (scaled) {
       rect.x = (int) Math.min(Math.min(x0, x1), Math.min(x2, x3));
@@ -240,6 +242,7 @@ public class PerspectiveFilter extends TransformFilter {
     return y0 - (int) Math.min(Math.min(y0, y1), Math.min(y2, y3));
   }
 
+  @Override
   public Rectangle2D getBounds2D(BufferedImage src) {
     if (clip)
       return new Rectangle(0, 0, src.getWidth(), src.getHeight());
@@ -252,6 +255,7 @@ public class PerspectiveFilter extends TransformFilter {
     return r;
   }
 
+  @Override
   public Point2D getPoint2D(Point2D srcPt, Point2D dstPt) {
     if (dstPt == null)
       dstPt = new Point2D.Float();
@@ -262,6 +266,7 @@ public class PerspectiveFilter extends TransformFilter {
     return dstPt;
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     out[0] = originalSpace.width * (A * x + B * y + C) / (G * x + H * y + I);
     out[1] = originalSpace.height * (D * x + E * y + F) / (G * x + H * y + I);

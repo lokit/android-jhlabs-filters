@@ -48,6 +48,7 @@ public class SkeletonFilter extends BinaryFilter {
     newColor = 0xffffffff;
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int[] outPixels = new int[width * height];
 

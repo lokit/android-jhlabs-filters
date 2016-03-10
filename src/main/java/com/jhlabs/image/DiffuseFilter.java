@@ -52,6 +52,7 @@ public class DiffuseFilter extends TransformFilter {
     return scale;
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     int angle = (int) (Math.random() * 255);
     float distance = (float) Math.random();
@@ -59,6 +60,7 @@ public class DiffuseFilter extends TransformFilter {
     out[1] = y + distance * cosTable[angle];
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     sinTable = new float[256];
     cosTable = new float[256];

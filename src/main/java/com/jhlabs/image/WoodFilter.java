@@ -221,6 +221,7 @@ public class WoodFilter extends PointFilter {
     return colormap;
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     float nx = m00 * x + m01 * y;
     float ny = m10 * x + m11 * y;

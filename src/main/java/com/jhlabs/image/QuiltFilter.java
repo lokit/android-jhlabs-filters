@@ -127,6 +127,7 @@ public class QuiltFilter extends WholeImageFilter {
     return colormap;
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int[] outPixels = new int[width * height];
 

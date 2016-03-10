@@ -69,10 +69,12 @@ public class ChromeFilter extends LightFilter {
     return exposure;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     setColorSource(LightFilter.COLORS_CONSTANT);
     dst = super.filter(src, dst);
     TransferFilter tf = new TransferFilter() {
+      @Override
       protected float transferFunction(float v) {
         v += amount * (float) Math.sin(v * 2 * Math.PI);
         return 1 - (float) Math.exp(-v * exposure);

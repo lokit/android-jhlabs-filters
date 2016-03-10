@@ -208,6 +208,7 @@ public class LightFilter extends WholeImageFilter {
     c.set(((argb >> 16) & 0xff) * r255, ((argb >> 8) & 0xff) * r255, (argb & 0xff) * r255, ((argb >> 24) & 0xff) * r255);
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int index = 0;
     int[] outPixels = new int[width * height];
@@ -250,6 +251,7 @@ public class LightFilter extends WholeImageFilter {
           bump = new Function2D() {
             private Function2D original = bbump;
 
+            @Override
             public float evaluate(float x, float y) {
               float v = original.evaluate(x, y);
               switch (bumpShape) {
@@ -729,6 +731,7 @@ public class LightFilter extends WholeImageFilter {
       cosConeAngle = (float) Math.cos(coneAngle);
     }
 
+    @Override
     public Object clone() {
       try {
         Light copy = (Light) super.clone();

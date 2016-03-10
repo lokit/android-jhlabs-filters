@@ -163,6 +163,7 @@ public class PinchFilter extends TransformFilter {
     return amount;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     width = src.getWidth();
     height = src.getHeight();
@@ -174,6 +175,7 @@ public class PinchFilter extends TransformFilter {
     return super.filter(src, dst);
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     float dx = x - icentreX;
     float dy = y - icentreY;

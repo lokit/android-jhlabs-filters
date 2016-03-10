@@ -271,6 +271,7 @@ public class SkyFilter extends PointFilter {
 
   float mn, mx;
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     long start = System.currentTimeMillis();
     sunR = (float) ((sunColor >> 16) & 0xff) * r255;
@@ -339,6 +340,7 @@ public class SkyFilter extends PointFilter {
     return value;
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
 
 // Curvature

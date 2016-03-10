@@ -26,6 +26,7 @@ public final class ScreenComposite extends RGBComposite {
     super(alpha);
   }
 
+  @Override
   public CompositeContext createContext(ColorModel srcColorModel, ColorModel dstColorModel, RenderingHints hints) {
     return new Context(extraAlpha, srcColorModel, dstColorModel);
   }
@@ -35,6 +36,7 @@ public final class ScreenComposite extends RGBComposite {
       super(alpha, srcColorModel, dstColorModel);
     }
 
+    @Override
     public void composeRGB(int[] src, int[] dst, float alpha) {
       int w = src.length;
 

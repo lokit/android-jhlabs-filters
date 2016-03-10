@@ -28,6 +28,7 @@ public class EqualizeFilter extends WholeImageFilter {
   public EqualizeFilter() {
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     Histogram histogram = new Histogram(inPixels, width, height, 0, width);
 

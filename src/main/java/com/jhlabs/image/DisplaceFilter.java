@@ -74,6 +74,7 @@ public class DisplaceFilter extends TransformFilter {
     return amount;
   }
 
+  @Override
   public BufferedImage filter(BufferedImage src, BufferedImage dst) {
     int w = src.getWidth();
     int h = src.getHeight();
@@ -120,6 +121,7 @@ public class DisplaceFilter extends TransformFilter {
     return dst;
   }
 
+  @Override
   protected void transformInverse(int x, int y, float[] out) {
     float xDisplacement, yDisplacement;
     float nx = x;

@@ -49,6 +49,7 @@ public class ReduceNoiseFilter extends WholeImageFilter {
     return v[4];
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int index = 0;
     int[] r = new int[9];

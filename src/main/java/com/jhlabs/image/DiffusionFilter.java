@@ -125,6 +125,7 @@ public class DiffusionFilter extends WholeImageFilter {
     return levels;
   }
 
+  @Override
   protected int[] filterPixels(int width, int height, int[] inPixels, Rectangle transformedSpace) {
     int[] outPixels = new int[width * height];
 

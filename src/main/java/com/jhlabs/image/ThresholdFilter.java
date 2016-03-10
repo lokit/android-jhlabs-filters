@@ -123,6 +123,7 @@ public class ThresholdFilter extends PointFilter {
     return black;
   }
 
+  @Override
   public int filterRGB(int x, int y, int rgb) {
     int v = PixelUtils.brightness(rgb);
     float f = ImageMath.smoothStep(lowerThreshold, upperThreshold, v);
